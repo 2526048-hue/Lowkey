@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LowkeySpace 🌷</title>
+
+<style>
+html{scroll-behavior:smooth;}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial;}
+body{background:linear-gradient(135deg,#ffd6e8,#ffffff,#d6ecff);color:#444;}
+header{text-align:center;padding:70px 20px;background:linear-gradient(to right,#ffcce6,#d6ecff);}
+header h1{font-size:55px;color:#ff4f93;}
+nav{position:sticky;top:0;background:white;padding:12px;display:flex;justify-content:center;gap:10px;flex-wrap:wrap;box-shadow:0 4px 10px rgba(0,0,0,0.1);}
+nav a{text-decoration:none;padding:10px 18px;border-radius:25px;background:#ffe4f1;color:#ff4f93;font-weight:bold;}
+section{padding:50px 10%;}
+.card{background:white;padding:25px;border-radius:25px;box-shadow:0 5px 15px rgba(0,0,0,0.1);margin-bottom:20px;}
+h2{color:#ff4f93;margin-bottom:12px;}
+.icon{width:80px;height:80px;margin:10px;}
+.grid{display:flex;gap:15px;flex-wrap:wrap;justify-content:center;}
+p,li{line-height:1.8;}
+.accordion{background:#ffe4f1;padding:15px;border-radius:15px;margin-top:10px;cursor:pointer;font-weight:bold;}
+.panel{display:none;padding:15px;background:#fff;border-radius:15px;margin-bottom:10px;}
+.todo-box{display:flex;gap:10px;margin-top:10px;}
+input{flex:1;padding:12px;border-radius:15px;border:1px solid #ddd;}
+button{padding:12px;border:none;background:#ff4f93;color:white;border-radius:15px;cursor:pointer;}
+.todo-list li{background:#ffe4f1;margin-top:8px;padding:10px;border-radius:15px;display:flex;justify-content:space-between;}
+.quote{text-align:center;color:#ff4f93;font-style:italic;margin:8px 0;}
+.music{background:#ffe4f1;padding:15px;border-radius:20px;margin-top:10px;}
+footer{text-align:center;padding:25px;background:#ffd6eb;}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>🌷 LowkeySpace</h1>
+<p>Safe Space untuk Gen Z (SMP–SMA) 💗</p>
+</header>
+
+<nav>
+<a href="#home">Home</a>
+<a href="#jenis">Jenis</a>
+<a href="#dampak">Dampak</a>
+<a href="#tips">Tips</a>
+<a href="#todo">To Do</a>
+<a href="#music">Music</a>
+</nav>
+
+<!-- HOME -->
+<section id="home">
+<div class="card">
+<h2>💗 Selamat Datang</h2>
+<p>Website ini dibuat untuk remaja SMP–SMA agar lebih tenang, mengurangi overthinking, dan belajar self-care 🌷</p>
+
+<div class="grid">
+<img class="icon" src="[PASTE LINK FOTO DI SINI]" alt="Ilustrasi 1">
+<img class="icon" src="[PASTE LINK FOTO DI SINI]" alt="Ilustrasi 2">
+<img class="icon" src="[PASTE LINK FOTO DI SINI]" alt="Ilustrasi 3">
+</div>
+</div>
+</section>
+
+<!-- JENIS -->
+<section id="jenis">
+<div class="card">
+<h2>🌧 Jenis Gangguan Mental (klik untuk lihat)</h2>
+
+<div class="accordion" onclick="toggle(this)">Depresi</div>
+<div class="panel">
+<p>Depresi adalah kondisi sedih berkepanjangan, kehilangan minat, dan merasa kosong.</p>
+<img class="icon" src="[PASTE LINK FOTO DI SINI]" alt="Depresi ilustrasi">
+</div>
+
+<div class="accordion" onclick="toggle(this)">Anxiety</div>
+<div class="panel">
+<p>Anxiety adalah rasa cemas berlebihan terhadap masa depan atau hal kecil.</p>
+<img class="icon" src="[PASTE LINK FOTO DI SINI]" alt="Anxiety ilustrasi">
+</div>
+
+<div class="accordion" onclick="toggle(this)">Overthinking</div>
+<div class="panel">
+<p>Overthinking adalah terlalu banyak berpikir sampai mental lelah.</p>
+<img class="icon" src="[PASTE LINK FOTO DI SINI]" alt="Overthinking ilustrasi">
+</div>
+</div>
+</section>
+
+<!-- DAMPAK -->
+<section id="dampak">
+<div class="card">
+<h2>😵 Dampak Stress</h2>
+<ul>
+<li>Sulit fokus belajar</li>
+<li>Mudah marah</li>
+<li>Gangguan tidur</li>
+<li>Menarik diri</li>
+<li>Merasa kosong</li>
+</ul>
+<img class="icon" src="[PASTE LINK FOTO DI SINI]" alt="Dampak ilustrasi">
+</div>
+</section>
+
+<!-- TIPS -->
+<section id="tips">
+<div class="card">
+<h2>✨ Tips Self-Care</h2>
+<ul>
+<li>Istirahat cukup</li>
+<li>Kurangi media sosial</li>
+<li>Curhat ke orang terpercaya</li>
+<li>Journaling</li>
+<li>Self-love</li>
+</ul>
+<img class="icon" src="[PASTE LINK FOTO DI SINI]" alt="Tips ilustrasi">
+</div>
+</section>
+
+<!-- TODO -->
+<section id="todo">
+<div class="card">
+<h2>🌷 To Do List</h2>
+<div class="todo-box">
+<input id="task" placeholder="tulis kegiatan kecil hari ini...">
+<button onclick="addTask()">Tambah</button>
+</div>
+<ul id="list" class="todo-list"></ul>
+</div>
+</section>
+
+<!-- MUSIC -->
+<section id="music">
+<div class="card">
+<h2>🎵 Musik Favoritmu</h2>
+
+<p>Audio 1</p>
+<audio controls>
+  <source src="[PASTE LINK AUDIO DI SINI]" type="audio/mpeg">
+  Browsermu tidak mendukung audio.
+</audio>
+
+<p>Audio 2</p>
+<audio controls>
+  <source src="[PASTE LINK AUDIO DI SINI]" type="audio/mpeg">
+  Browsermu tidak mendukung audio.
+</audio>
+
+<p>Audio 3</p>
+<audio controls>
+  <source src="[PASTE LINK AUDIO DI SINI]" type="audio/mpeg">
+  Browsermu tidak mendukung audio.
+</audio>
+</div>
+</section>
+
+<footer>
+© 2026 LowkeySpace 🌷
+</footer>
+
+<script>
+function toggle(el){
+let panel = el.nextElementSibling;
+panel.style.display = (panel.style.display==="block") ? "none" : "block";
+}
+
+function addTask(){
+let input = document.getElementById("task");
+let list = document.getElementById("list");
+if(input.value==="") return;
+let li = document.createElement("li");
+li.innerHTML = input.value + "<button onclick='this.parentElement.remove()'>hapus</button>";
+list.appendChild(li);
+input.value="";
+}
+</script>
+
+</body>
+</html>
