@@ -6,28 +6,44 @@
 <title>LowkeySpace 🌷</title>
 
 <style>
-html{scroll-behavior:smooth;}
-*{margin:0;padding:0;box-sizing:border-box;font-family:Arial;}
-body{background:linear-gradient(135deg,#ffd6e8,#ffffff,#d6ecff);color:#444;}
-header{text-align:center;padding:70px 20px;background:linear-gradient(to right,#ffcce6,#d6ecff);}
-header h1{font-size:55px;color:#ff4f93;}
-nav{position:sticky;top:0;background:white;padding:12px;display:flex;justify-content:center;gap:10px;flex-wrap:wrap;box-shadow:0 4px 10px rgba(0,0,0,0.1);}
-nav a{text-decoration:none;padding:10px 18px;border-radius:25px;background:#ffe4f1;color:#ff4f93;font-weight:bold;}
-section{padding:50px 10%;}
-.card{background:white;padding:25px;border-radius:25px;box-shadow:0 5px 15px rgba(0,0,0,0.1);margin-bottom:20px;}
-h2{color:#ff4f93;margin-bottom:12px;}
-.icon{width:80px;height:80px;margin:10px;}
-.grid{display:flex;gap:15px;flex-wrap:wrap;justify-content:center;}
-p,li{line-height:1.8;}
-.accordion{background:#ffe4f1;padding:15px;border-radius:15px;margin-top:10px;cursor:pointer;font-weight:bold;}
-.panel{display:none;padding:15px;background:#fff;border-radius:15px;margin-bottom:10px;}
-.todo-box{display:flex;gap:10px;margin-top:10px;}
-input{flex:1;padding:12px;border-radius:15px;border:1px solid #ddd;}
-button{padding:12px;border:none;background:#ff4f93;color:white;border-radius:15px;cursor:pointer;}
-.todo-list li{background:#ffe4f1;margin-top:8px;padding:10px;border-radius:15px;display:flex;justify-content:space-between;}
-.quote{text-align:center;color:#ff4f93;font-style:italic;margin:8px 0;}
-.music{background:#ffe4f1;padding:15px;border-radius:20px;margin-top:10px;}
-footer{text-align:center;padding:25px;background:#ffd6eb;}
+html { scroll-behavior: smooth; }
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Arial, sans-serif; }
+body { background: linear-gradient(135deg, #ffd6e8, #ffffff, #d6ecff); color: #444; min-height: 100vh; }
+header { text-align: center; padding: 80px 20px; background: linear-gradient(to right, #ffcce6, #d6ecff); }
+header h1 { font-size: 48px; color: #ff4f93; margin-bottom: 10px; }
+header p { font-size: 18px; color: #666; }
+
+nav { position: sticky; top: 0; background: rgba(255, 255, 255, 0.95); padding: 15px; display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; box-shadow: 0 4px 10px rgba(0,0,0,0.05); z-index: 1000; backdrop-filter: blur(5px); }
+nav a { text-decoration: none; padding: 10px 20px; border-radius: 25px; background: #ffe4f1; color: #ff4f93; font-weight: bold; transition: all 0.3s ease; }
+nav a:hover { background: #ff4f93; color: white; transform: translateY(-2px); }
+
+section { padding: 40px 10%; max-width: 1200px; margin: 0 auto; }
+.card { background: white; padding: 30px; border-radius: 25px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); margin-bottom: 25px; }
+h2 { color: #ff4f93; margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
+p, li { line-height: 1.8; color: #555; margin-bottom: 10px; }
+ul { margin-left: 20px; margin-bottom: 15px; }
+
+/* Styling Media (Gambar & Video) agar responsif dan tidak pecah */
+.media-grid { display: flex; gap: 15px; flex-wrap: wrap; justify-content: center; margin-top: 20px; }
+.media-box { width: 100%; max-width: 350px; border-radius: 15px; object-fit: cover; box-shadow: 0 4px 10px rgba(0,0,0,0.1); background-color: #f9f9f9; }
+
+.accordion { background: #ffe4f1; padding: 15px 20px; border-radius: 15px; margin-top: 12px; cursor: pointer; font-weight: bold; color: #ff4f93; transition: background 0.3s; display: flex; justify-content: space-between; }
+.accordion:hover { background: #ffd0e6; }
+.panel { display: none; padding: 20px; background: #fff5f9; border-radius: 0 0 15px 15px; border: 1px solid #ffe4f1; border-top: none; }
+
+.todo-box { display: flex; gap: 10px; margin-top: 15px; }
+input { flex: 1; padding: 12px 20px; border-radius: 15px; border: 2px solid #ffe4f1; outline: none; font-size: 16px; }
+input:focus { border-color: #ff4f93; }
+button { padding: 12px 25px; border: none; background: #ff4f93; color: white; border-radius: 15px; cursor: pointer; font-weight: bold; transition: background 0.3s; }
+button:hover { background: #e03e7f; }
+.todo-list { list-style: none; margin-left: 0; }
+.todo-list li { background: #ffe4f1; margin-top: 10px; padding: 12px 20px; border-radius: 15px; display: flex; justify-content: space-between; align-items: center; color: #ff4f93; font-weight: 500; }
+.todo-list li button { padding: 6px 12px; background: #ff4f93; font-size: 13px; }
+
+.audio-player { background: #ffe4f1; padding: 15px; border-radius: 20px; margin-top: 15px; display: flex; flex-direction: column; gap: 5px; }
+audio { width: 100%; margin-top: 5px; }
+
+footer { text-align: center; padding: 30px; background: #ffd6eb; color: #ff4f93; font-weight: bold; margin-top: 50px; }
 </style>
 </head>
 
@@ -35,140 +51,148 @@ footer{text-align:center;padding:25px;background:#ffd6eb;}
 
 <header>
 <h1>🌷 LowkeySpace</h1>
-<p>Safe Space untuk Gen Z (SMP–SMA) 💗</p>
+<p>Safe Space Nyaman untuk Remaja & Gen Z 💗</p>
 </header>
 
 <nav>
 <a href="#home">Home</a>
-<a href="#jenis">Jenis</a>
+<a href="#jenis">Materi Mental Health</a>
 <a href="#dampak">Dampak</a>
-<a href="#tips">Tips</a>
+<a href="#tips">Tips Self-Care</a>
 <a href="#todo">To Do</a>
-<a href="#music">Music</a>
+<a href="#music">Music & Video</a>
 </nav>
 
-<!-- HOME -->
 <section id="home">
 <div class="card">
-<h2>💗 Selamat Datang</h2>
-<p>Website ini dibuat untuk remaja SMP–SMA agar lebih tenang, mengurangi overthinking, dan belajar self-care 🌷</p>
+<h2>💗 Selamat Datang di Rumah Amannmu</h2>
+<p>Dunia kadang berisik banget ya? Di sini, kamu bisa rehat sejenak. Website ini dirancang khusus buat teman-teman SMP & SMA yang sering ngerasa capek, <i>overthinking</i>, atau bingung sama emosi sendiri. Yuk, belajar bareng cara menyayangi diri sendiri (self-care) 🌷</p>
 
-<div class="grid">
-<img class="icon" src="[PASTE LINK FOTO DI SINI]" alt="Ilustrasi 1">
-<img class="icon" src="[PASTE LINK FOTO DI SINI]" alt="Ilustrasi 2">
-<img class="icon" src="[PASTE LINK FOTO DI SINI]" alt="Ilustrasi 3">
+<div class="media-grid">
+<img class="media-box" src="gambar-home1.jpg" alt="Ilustrasi Relaksasi Remaja">
+<img class="media-box" src="gambar-home2.jpg" alt="Ilustrasi Self Care">
 </div>
 </div>
 </section>
 
-<!-- JENIS -->
 <section id="jenis">
 <div class="card">
-<h2>🌧 Jenis Gangguan Mental (klik untuk lihat)</h2>
+<h2>🌧 Kenali Apa yang Kamu Rasakan (Klik untuk baca)</h2>
+<p>Jangan mendiagnosis diri sendiri ya! Tapi gak ada salahnya kita tahu istilah-istilah ini agar lebih paham kondisi emosi kita:</p>
 
-<div class="accordion" onclick="toggle(this)">Depresi</div>
+<div class="accordion" onclick="toggle(this)">1. Depresi (Lebih dari Sekadar Sedih) <span>▼</span></div>
 <div class="panel">
-<p>Depresi adalah kondisi sedih berkepanjangan, kehilangan minat, dan merasa kosong.</p>
-<img class="icon" src="[PASTE LINK FOTO DI SINI]" alt="Depresi ilustrasi">
+<p>Depresi bukan cuma "sedih biasa" karena nilai jelek atau diputusin pacar. Ini adalah kondisi medis di mana seseorang merasa kosong, putus asa, dan kehilangan minat pada hobinya selama <b>lebih dari 2 minggu berturut-turut</b>.</p>
+<p><i>Self-help:</i> Jangan dipendam sendiri, cari orang dewasa yang kamu percaya buat cerita.</p>
+<img class="media-box" src="depresi.jpg" alt="Ilustrasi Depresi">
 </div>
 
-<div class="accordion" onclick="toggle(this)">Anxiety</div>
+<div class="accordion" onclick="toggle(this)">2. Anxiety (Kecemasan yang Mengganggu) <span>▼</span></div>
 <div class="panel">
-<p>Anxiety adalah rasa cemas berlebihan terhadap masa depan atau hal kecil.</p>
-<img class="icon" src="[PASTE LINK FOTO DI SINI]" alt="Anxiety ilustrasi">
+<p>Wajar banget kalau gugup pas mau maju presentasi di kelas. Tapi kalau kamu cemas setiap saat tanpa alasan yang jelas, jantung sering berdebar kencang, dan selalu takut hal buruk bakal terjadi, itu bisa jadi tanda <i>Anxiety Disorder</i>.</p>
+<img class="media-box" src="anxiety.jpg" alt="Ilustrasi Cemas">
 </div>
 
-<div class="accordion" onclick="toggle(this)">Overthinking</div>
+<div class="accordion" onclick="toggle(this)">3. Overthinking (Terjebak di Pikiran Sendiri) <span>▼</span></div>
 <div class="panel">
-<p>Overthinking adalah terlalu banyak berpikir sampai mental lelah.</p>
-<img class="icon" src="[PASTE LINK FOTO DI SINI]" alt="Overthinking ilustrasi">
+<p>Overthinking adalah kebiasaan menganalisis sesuatu secara berlebihan. Contohnya: mikirin chat temen yang cuma dibales "Y", atau kepikiran kesalahan masa lalu yang sebenarnya orang lain udah lupa.</p>
+<p><b>Tips cepat:</b> Sadari kalau pikiran kamu bukanlah kenyataan yang sebenarnya.</p>
+<img class="media-box" src="overthinking.jpg" alt="Ilustrasi Overthinking">
 </div>
 </div>
 </section>
 
-<!-- DAMPAK -->
 <section id="dampak">
 <div class="card">
-<h2>😵 Dampak Stress</h2>
+<h2>😵 Kenapa Stres Gak Boleh Dibiarkan?</h2>
+<p>Stres yang menumpuk dan didiamkan bisa berdampak buruk ke keseharianmu sebagai pelajar:</p>
 <ul>
-<li>Sulit fokus belajar</li>
-<li>Mudah marah</li>
-<li>Gangguan tidur</li>
-<li>Menarik diri</li>
-<li>Merasa kosong</li>
+<li><b>Akademik terganggu:</b> Otak jadi susah konsentrasi, gampang lupa pas ujian.</li>
+<li><b>Fisik melemah:</b> Kepala sering pusing, perut mual, atau kena insomnia (susah tidur).</li>
+<li><b>Emosi gak stabil:</b> Jadi gampang tersinggung, pengen marah-marah, atau malah nangis tiba-tiba.</li>
+<li><b>Menarik diri:</b> Males kumpul sama temen-temen dan milih buat ngurung diri di kamar.</li>
 </ul>
-<img class="icon" src="[PASTE LINK FOTO DI SINI]" alt="Dampak ilustrasi">
+<img class="media-box" src="dampak-stress.jpg" alt="Ilustrasi Dampak Stres">
 </div>
 </section>
 
-<!-- TIPS -->
 <section id="tips">
 <div class="card">
-<h2>✨ Tips Self-Care</h2>
+<h2>✨ Langkah Kecil Self-Care untuk Remaja</h2>
+<p>Kamu gak harus langsung berubah instan. Coba lakukan langkah kecil ini setiap hari:</p>
 <ul>
-<li>Istirahat cukup</li>
-<li>Kurangi media sosial</li>
-<li>Curhat ke orang terpercaya</li>
-<li>Journaling</li>
-<li>Self-love</li>
+<li><b>Digital Detox:</b> Matikan HP 1 jam sebelum tidur. Kurangi liat <i>exposure</i> kehidupan orang lain di TikTok/Instagram yang bikin minder.</li>
+<li><b>Metode 5-4-3-2-1:</b> Pas cemas, sebutkan 5 benda yang kamu lihat, 4 yang bisa disentuh, 3 yang didengar, 2 yang dicium, dan 1 yang dirasa. Ini ampuh bikin tenang!</li>
+<li><b>Journaling:</b> Keluarin unek-unek lewat tulisan di buku harian. Menulis itu melegakan.</li>
+<li><b>Tidur Teratur:</b> Remaja butuh tidur 8-10 jam biar hormon stresnya turun.</li>
 </ul>
-<img class="icon" src="[PASTE LINK FOTO DI SINI]" alt="Tips ilustrasi">
 </div>
 </section>
 
-<!-- TODO -->
 <section id="todo">
 <div class="card">
-<h2>🌷 To Do List</h2>
+<h2>🌷 To Do List: Misi Kecil Hari Ini</h2>
+<p>Bikin target kecil yang gampang dicapai biar harimu terasa lebih produktif!</p>
 <div class="todo-box">
-<input id="task" placeholder="tulis kegiatan kecil hari ini...">
+<input id="task" placeholder="Contoh: Minum air putih 2 botol, beresin kasur...">
 <button onclick="addTask()">Tambah</button>
 </div>
 <ul id="list" class="todo-list"></ul>
 </div>
 </section>
 
-<!-- MUSIC -->
 <section id="music">
 <div class="card">
-<h2>🎵 Musik Favoritmu</h2>
+<h2>🎵 Ruang Tenang (Audio & Video)</h2>
+<p>Sambil bersantai, dengerin musik lo-fi atau tonton video panduan pernapasan di bawah ini:</p>
 
-<p>Audio 1</p>
+<div class="audio-player">
+<p>🍃 <b>Lo-Fi Rain (Musik Penenang)</b></p>
 <audio controls>
-  <source src="[PASTE LINK AUDIO DI SINI]" type="audio/mpeg">
+  <source src="audio/lofi-rain.mp3" type="audio/mpeg">
   Browsermu tidak mendukung audio.
 </audio>
+</div>
 
-<p>Audio 2</p>
+<div class="audio-player">
+<p>🌊 <b>Suara Ombak Laut (Terapi Anxiety)</b></p>
 <audio controls>
-  <source src="[PASTE LINK AUDIO DI SINI]" type="audio/mpeg">
+  <source src="audio/ocean.mp3" type="audio/mpeg">
   Browsermu tidak mendukung audio.
 </audio>
+</div>
 
-<p>Audio 3</p>
-<audio controls>
-  <source src="[PASTE LINK AUDIO DI SINI]" type="audio/mpeg">
-  Browsermu tidak mendukung audio.
-</audio>
+<div class="audio-player" style="margin-top: 20px;">
+<p>🧘‍♀️ <b>Video Panduan Breathing Exercise (Pernapasan)</b></p>
+<video controls class="media-box" style="max-width: 100%; margin-top: 10px;">
+  <source src="video/breathing.mp4" type="video/mp4">
+  Browsermu tidak mendukung video.
+</video>
+</div>
+
 </div>
 </section>
 
 <footer>
-© 2026 LowkeySpace 🌷
+© 2026 LowkeySpace 🌷 | Dibuat dengan Cinta untuk Teman-Teman Semua
 </footer>
 
 <script>
 function toggle(el){
 let panel = el.nextElementSibling;
-panel.style.display = (panel.style.display==="block") ? "none" : "block";
+if (panel.style.display === "block") {
+  panel.style.display = "none";
+} else {
+  panel.style.display = "block";
+}
 }
 
 function addTask(){
 let input = document.getElementById("task");
 let list = document.getElementById("list");
-if(input.value==="") return;
+if(input.value.trim() === "") return;
 let li = document.createElement("li");
-li.innerHTML = input.value + "<button onclick='this.parentElement.remove()'>hapus</button>";
+li.innerHTML = input.value + "<button onclick='this.parentElement.remove()'>Hapus</button>";
 list.appendChild(li);
 input.value="";
 }
