@@ -3,47 +3,56 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LowkeySpace 🌷 Your Pink, Blue, & White Safe Space</title>
+<title>LowkeySpace 🌷 Premium Safe Space</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Playpen+Sans:wght@600;800&family=Quicksand:wght@600;700&display=swap" rel="stylesheet">
 
 <style>
 html { scroll-behavior: smooth; }
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
-/* --- WORKSHEET THEME CODE: COZY PINK & BLUE MIX --- */
+/* --- BACKGROUND: GRADASI HALUS NYATU (PINK-PUTIH SEDIKIT-BIRU PASTEL) --- */
 body {
     font-family: 'Quicksand', sans-serif;
-    /* Kombinasi Pink & Biru Pastel yang sangat adem di mata */
-    background: linear-gradient(135deg, #ffeef2 0%, #e6f2ff 100%);
-    color: #4a5568;
-    padding-bottom: 80px;
+    background: linear-gradient(180deg, #FFC0CB 0%, #FFF5F5 35%, #B0E0E6 100%);
+    background-size: 100% 200%;
+    background-position: top center;
+    color: #2d3748;
+    padding-bottom: 100px;
     overflow-x: hidden;
-    transition: background 0.6s ease;
+    transition: background-position 0.8s ease-in-out, background-color 0.8s ease-in-out;
     background-attachment: fixed;
 }
 
-/* DYNAMIC TAB GRADIENTS (STAYING WITHIN PINK & BLUE WORKSHEET CODES) */
-body.theme-home { background: linear-gradient(135deg, #ffeef2 0%, #e6f2ff 100%); }
-body.theme-diary { background: linear-gradient(135deg, #e6f2ff 0%, #f0f4ff 100%); }
-body.theme-calm { background: linear-gradient(135deg, #eefbf7 0%, #ffeef2 100%); }
-body.theme-care { background: linear-gradient(135deg, #ffeef2 0%, #f3efff 100%); }
-
-h1, h2, h3, h4, nav a, .accordion, .btn-cute, .welcome-box h2, .mood-btn, .music-select, .affirmation-display, .infographic-title {
-    font-family: 'Fredoka', sans-serif;
-}
+body.theme-home { background-position: top center; }
+body.theme-diary { background-position: center center; }
+body.theme-calm { background-position: bottom center; }
+body.theme-care { background-position: top center; }
 
 header {
     text-align: center;
-    padding: 70px 20px 30px 20px;
+    padding: 50px 20px 20px 20px;
 }
-/* Aksen Pink Rose Utama */
-header h1 { font-size: 50px; color: #ff7da3; text-shadow: 2px 2px 0px #ffffff; }
-header p { font-size: 16px; color: #7ba2b8; margin-top: 6px; font-weight: 500; }
 
-/* FLOATING PETALS EFFECT */
+/* JUDUL UTAMA DENGAN KAPITALISASI L DAN S BESAR */
+header h1 { 
+    font-family: 'Playpen Sans', cursive;
+    font-weight: 800;
+    font-size: 46px; 
+    color: #db7093; 
+    text-shadow: 2px 2px 0px #ffffff;
+    letter-spacing: -1px;
+}
+header p { 
+    font-size: 14.5px; 
+    color: #5a6578; 
+    margin-top: 8px; 
+    font-weight: 700;
+}
+
+/* FALLING PETALS */
 .petal {
     position: fixed;
     top: -10px; z-index: 99; font-size: 20px;
@@ -60,162 +69,143 @@ header p { font-size: 16px; color: #7ba2b8; margin-top: 6px; font-weight: 500; }
 .welcome-overlay {
     position: fixed;
     top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(230, 242, 255, 0.98); 
+    background: rgba(255, 240, 245, 0.98); 
     z-index: 9999; display: flex; justify-content: center; align-items: center;
-    backdrop-filter: blur(10px); transition: opacity 0.5s ease;
+    transition: opacity 0.4s ease;
 }
 .welcome-box {
-    background: #ffffff; padding: 40px 25px; border-radius: 35px; text-align: center;
-    max-width: 420px; width: 90%; border: 3px solid #ff7da3;
-    box-shadow: 0 15px 0px #ffeef2; animation: popUp 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.15);
+    background: #ffffff; padding: 40px 30px; border-radius: 24px; text-align: center;
+    max-width: 400px; width: 90%; box-shadow: 0 10px 30px rgba(219, 112, 147, 0.2);
+    border: 2px solid #FFC0CB;
 }
-@keyframes popUp { from { transform: scale(0.9); opacity: 0; } to { transform: scale(1); opacity: 1; } }
-.welcome-box h2 { color: #ff7da3; font-size: 28px; margin-bottom: 12px; }
+.welcome-box h2 { font-family: 'Playfair Display', serif; color: #db7093; font-size: 28px; margin-bottom: 12px; }
+.welcome-box p { font-size: 14.5px; color: #5a6578; margin-bottom: 20px; font-weight: 600; line-height: 1.6; }
 
-/* THE WHITE-PINK-BLUE NAVIGATION BAR */
+/* NAVIGATION BAR */
 nav {
     position: sticky; top: 20px;
-    background: rgba(255, 255, 255, 0.95); 
-    backdrop-filter: blur(10px); padding: 8px;
-    display: flex; justify-content: center; gap: 6px; flex-wrap: wrap;
-    z-index: 1000; max-width: 680px; margin: 0 auto 30px auto;
-    border-radius: 30px; border: 2px solid #ffeef2;
-    box-shadow: 0 10px 25px rgba(255, 125, 163, 0.08);
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px); padding: 6px;
+    display: flex; justify-content: center; gap: 4px; flex-wrap: wrap;
+    z-index: 1000; max-width: 600px; margin: 0 auto 35px auto;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.5);
 }
 nav a {
-    text-decoration: none; padding: 10px 18px; border-radius: 25px;
-    color: #7ba2b8; font-weight: 600; font-size: 13.5px;
+    text-decoration: none; padding: 10px 18px; border-radius: 12px;
+    color: #5a6578; font-weight: 700; font-size: 14px;
     transition: all 0.3s ease;
 }
-nav a:hover { color: #ff7da3; }
-/* Active tab gets the Beautiful Sky Blue color */
-nav a.active { background: #6cb6ff; color: #ffffff; box-shadow: 0 6px 12px rgba(108, 182, 255, 0.3); }
+nav a:hover { color: #db7093; }
+nav a.active { background: #db7093; color: #ffffff; box-shadow: 0 4px 10px rgba(219, 112, 147, 0.2); }
 
-/* LAYOUT CONTAINER */
-.main-container { max-width: 680px; margin: 0 auto; padding: 0 15px; }
+/* CARDS CONFIG */
+.main-container { max-width: 600px; margin: 0 auto; padding: 0 15px; }
 .column-section { display: none; }
-.column-section.active-section { display: block; animation: tabBounce 0.4s ease-out; }
-@keyframes tabBounce { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
+.column-section.active-section { display: block; animation: fadeIn 0.4s ease-out; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
 
-/* THE DOMINANT WHITE CARDS (AS REQUESTED) */
 .card {
-    background: #ffffff; 
-    border-radius: 28px; padding: 28px;
-    border: 2px solid #f0f4f8;
-    box-shadow: 0 10px 20px rgba(160, 180, 200, 0.05);
-    margin-bottom: 25px; position: relative;
+    background: rgba(255, 255, 255, 0.9); 
+    border-radius: 20px; padding: 28px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.03);
+    margin-bottom: 22px;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.6);
 }
 
-/* INFOGRAPHIC COMPONENT WITH RE-ADJUSTED COLOR BADGES */
+h2 { font-family: 'Playfair Display', serif; color: #333333; font-size: 23px; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+p, li { font-size: 14.5px; color: #4a5568; line-height: 1.7; font-weight: 600; }
+
 .info-badge {
-    display: inline-block; padding: 5px 12px; border-radius: 12px; 
-    font-size: 11px; font-weight: bold; text-transform: uppercase; 
-    margin-bottom: 10px; font-family: 'Fredoka', sans-serif;
+    display: inline-block; padding: 4px 10px; border-radius: 6px; 
+    font-size: 11px; font-weight: 700; text-transform: uppercase; 
+    margin-bottom: 12px; color: #ffffff; font-family: 'Quicksand', sans-serif;
 }
-.badge-pink { background: #ffeef2; color: #ff5588; }
-.badge-blue { background: #e6f2ff; color: #3388ff; }
-.badge-purple { background: #f3efff; color: #7744ff; }
-.badge-mint { background: #eefbf7; color: #11aa77; }
+.badge-pink { background: #db7093; }
+.badge-blue { background: #4682b4; }
+.badge-purple { background: #9370db; }
+.badge-mint { background: #5f9ea0; }
 
 .highlight-box {
-    background: #f7faff; border-left: 4px solid #6cb6ff;
-    padding: 15px; border-radius: 0 16px 16px 0; margin: 12px 0;
+    background: rgba(247, 250, 252, 0.7); border-left: 4px solid #db7093;
+    padding: 14px; border-radius: 0 12px 12px 0; margin: 14px 0;
 }
-.bullet-grid {
-    display: grid; grid-template-columns: 1fr; gap: 10px; margin-top: 10px;
-}
-.bullet-item {
-    background: #fcfdfe; padding: 12px 15px; border-radius: 16px;
-    border: 1px solid #edf2f7; display: flex; align-items: flex-start; gap: 10px;
-}
-.bullet-icon { font-size: 18px; }
 
-/* MOOD BOX */
-.mood-container { display: flex; justify-content: space-around; margin: 20px 0; }
+.bullet-grid { display: flex; flex-direction: column; gap: 10px; margin-top: 12px; }
+.bullet-item {
+    background: rgba(255, 255, 255, 0.7); padding: 14px 16px; border-radius: 12px;
+    border: 1px solid #edf2f7; display: flex; align-items: flex-start; gap: 12px;
+}
+.bullet-icon { font-size: 16px; }
+
+/* MOOD CONTAINER */
+.mood-container { display: flex; justify-content: space-between; margin: 18px 0; gap: 10px; }
 .mood-btn { 
-    font-size: 32px; background: #ffffff; border: 2px solid #edf2f7; 
-    cursor: pointer; transition: 0.2s; width: 60px; height: 60px; border-radius: 50%;
+    font-size: 28px; background: #ffffff; border: 2px solid #edf2f7; 
+    cursor: pointer; transition: all 0.2s ease; flex: 1; height: 55px; border-radius: 14px;
     display: flex; justify-content: center; align-items: center;
 }
-.mood-btn:hover { transform: scale(1.15) translateY(-3px); border-color: #ffccd5; background: #ffeef2; }
+.mood-btn:hover { transform: translateY(-3px); border-color: #db7093; background: #fff5f7; }
 #moodFeedback { 
-    background: #ffffff; padding: 15px; border-radius: 18px; border: 2px dashed #ffccd5;
-    text-align: center; font-weight: 600; display: none; color: #ff7da3; font-size: 14px;
+    background: #ffffff; padding: 14px; border-radius: 12px; border: 2px dashed #db7093;
+    text-align: center; font-weight: 700; display: none; color: #db7093; margin-top: 10px;
 }
 
-/* WATER TRACKER CLEAN GLASSES */
-.water-grid { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 18px; justify-content: center; }
-.glass-btn { font-size: 36px; background: none; border: none; cursor: pointer; opacity: 0.25; transition: 0.2s; }
-.glass-btn.active { opacity: 1; transform: scale(1.2) rotate(5deg); filter: drop-shadow(0 0 5px #6cb6ff); }
+.water-grid { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 15px; justify-content: center; }
+.glass-btn { font-size: 34px; background: none; border: none; cursor: pointer; opacity: 0.25; transition: 0.2s; }
+.glass-btn.active { opacity: 1; transform: scale(1.2); }
 
-/* SYSTEM ACCORDION BUTTONS */
+/* ACCORDION */
 .accordion { 
-    background: #ffffff; padding: 15px 20px; border-radius: 16px; 
-    margin-top: 12px; cursor: pointer; font-weight: 600; color: #ff7da3; 
+    background: #ffffff; padding: 14px 18px; border-radius: 12px; 
+    margin-top: 10px; cursor: pointer; font-weight: 700; color: #333333; 
     display: flex; justify-content: space-between; align-items: center; 
-    border: 2px solid #edf2f7; font-size: 14.5px;
+    border: 1.5px solid #edf2f7; font-family: 'Playfair Display', serif;
 }
-.accordion:hover { background: #ffeef2; border-color: #ffccd5; }
-.panel { display: none; padding: 18px; background: #fafafa; border-radius: 0 0 16px 16px; border: 2px solid #edf2f7; border-top: none; }
+.accordion:hover { background: #fff5f7; border-color: #db7093; }
+.panel { display: none; padding: 14px 18px; background: rgba(252, 253, 254, 0.85); border-radius: 0 0 12px 12px; border: 1.5px solid #edf2f7; border-top: none; }
 
-/* INPUT & ACTION BUTTONS */
-.todo-box { display: flex; gap: 8px; margin-top: 15px; }
-input { 
-    flex: 1; padding: 12px 18px; border-radius: 16px; 
-    border: 2px solid #edf2f7; font-family: 'Quicksand', sans-serif; outline: none; font-size: 14px;
-}
-input:focus { border-color: #6cb6ff; }
+/* FORM & BUTTONS */
+.todo-box { display: flex; gap: 8px; margin-top: 12px; }
+input { flex: 1; padding: 12px 16px; border-radius: 12px; border: 1.5px solid #edf2f7; font-family: 'Quicksand', sans-serif; outline: none; font-weight: 600;}
+input:focus { border-color: #db7093; }
 .btn-cute { 
-    padding: 12px 20px; background: #ff7da3; color: #ffffff; border: none; 
-    border-radius: 16px; cursor: pointer; font-weight: bold; font-size: 13.5px;
-    box-shadow: 0 4px 0 #db5a82; transition: 0.1s;
+    padding: 12px 22px; background: #db7093; color: #ffffff; border: none; 
+    border-radius: 12px; cursor: pointer; font-weight: bold; font-family: 'Quicksand', sans-serif;
+    box-shadow: 0 3px 0 #b35372; transition: 0.1s;
 }
-.btn-cute:hover { transform: translateY(1px); box-shadow: 0 3px 0 #db5a82; }
-.btn-cute:active { transform: translateY(4px); box-shadow: none; }
+.btn-cute:hover { transform: translateY(1px); box-shadow: 0 2px 0 #b35372; }
+.btn-cute:active { transform: translateY(3px); box-shadow: none; }
 
-.todo-list li { 
-    background: #ffffff; margin-top: 10px; padding: 12px 16px; 
-    border-radius: 14px; display: flex; justify-content: space-between; 
-    align-items: center; border: 2px solid #edf2f7; font-weight: 600; color: #5a6e7f;
-}
+.todo-list li { background: #ffffff; margin-top: 8px; padding: 12px 16px; border-radius: 12px; display: flex; justify-content: space-between; align-items: center; border: 1.5px solid #edf2f7; font-weight: 700; }
 
-/* ANTI SAKIT MATA VISUAL BREATHE BUBBLE */
-.breathe-wrapper { display: flex; flex-direction: column; align-items: center; justify-content: center; margin: 20px 0; }
+/* BREATHE CIRCLE */
+.breathe-wrapper { display: flex; flex-direction: column; align-items: center; justify-content: center; margin: 15px 0; }
 .breathe-circle {
-    width: 120px; height: 120px; background: linear-gradient(135deg, #a3e2cd, #60ccaa);
-    border-radius: 50%; display: flex; justify-content: center; align-items: center;
-    color: #ffffff; font-weight: bold; font-size: 16px; font-family: 'Fredoka', sans-serif;
-    box-shadow: 0 0 20px rgba(96, 204, 170, 0.3);
-    animation: breatheMotion 8s ease-in-out infinite;
+    width: 110px; height: 110px; background: #b0e0e6;
+    border-radius: 50%; display: flex; justify-content: center; align-items: center; color: #4a5568; font-weight: bold;
+    box-shadow: 0 0 15px rgba(176, 224, 230, 0.6); animation: breatheMotion 7s ease-in-out infinite;
 }
-@keyframes breatheMotion {
-    0%, 100% { transform: scale(1); }
-    40%, 60% { transform: scale(1.4); }
-}
-.breathe-text { font-size: 13px; color: #407060; font-weight: bold; margin-top: 15px; letter-spacing: 0.5px; }
+@keyframes breatheMotion { 0%, 100% { transform: scale(1); } 40%, 60% { transform: scale(1.35); } }
+.breathe-text { font-size: 13px; color: #5a6578; font-weight: bold; margin-top: 12px; }
 
-.affirmation-display {
-    margin-top: 12px; padding: 18px; background: #ffffff; border-radius: 16px;
-    border: 2px dashed #ffccd5; text-align: center; color: #ff5588; font-size: 15px; display: none;
-}
+.affirmation-display { margin-top: 14px; padding: 16px; background: #ffffff; border-radius: 12px; border: 2px dashed #db7093; text-align: center; display: none; font-weight: 700; color: #db7093; }
 
-/* MUSIC SELECT HUB PANEL */
-.audio-hub { display: flex; gap: 6px; margin-top: 12px; background: #f7fafc; padding: 5px; border-radius: 20px; border: 1px solid #edf2f7; }
-.music-select { background: none; border: none; padding: 8px 12px; font-size: 11px; border-radius: 15px; cursor: pointer; font-weight: bold; color: #7b8e9b; flex: 1; }
-.music-select.active-track { background: #6cb6ff; color: #ffffff; }
+/* AUDIO UTILITIES */
+.audio-hub { display: flex; gap: 6px; margin-top: 12px; background: #edf2f7; padding: 4px; border-radius: 14px; }
+.music-select { background: none; border: none; padding: 10px 14px; font-size: 12px; border-radius: 10px; cursor: pointer; font-weight: bold; color: #4a5568; flex: 1; transition: 0.2s; }
+.music-select.active-track { background: #db7093; color: #ffffff; }
 
 .music-control-container { position: fixed; bottom: 20px; right: 20px; z-index: 2000; }
 .music-control-btn {
-    background: #ff7da3; color: #ffffff; border: 3px solid #ffffff;
-    border-radius: 50%; width: 50px; height: 50px; font-size: 18px;
-    cursor: pointer; box-shadow: 0 5px 15px rgba(255, 125, 163, 0.3);
-    display: flex; justify-content: center; align-items: center;
+    background: #ffffff; color: #db7093; border: 2px solid #db7093;
+    border-radius: 50%; width: 45px; height: 45px; font-size: 16px; cursor: pointer;
+    display: flex; justify-content: center; align-items: center; font-weight: bold;
 }
 
-h2 { color: #ff7da3; font-size: 20px; margin-bottom: 12px; display: flex; align-items: center; gap: 6px; }
-p, li { font-size: 14.5px; color: #5a6570; line-height: 1.7; }
-
-footer { text-align: center; padding: 30px; color: #7ba2b8; font-weight: 600; font-size: 13px; }
+footer { text-align: center; padding: 40px 20px; color: #5a6578; font-weight: 700; font-size: 13px; opacity: 0.8; }
 </style>
 </head>
 
@@ -223,19 +213,22 @@ footer { text-align: center; padding: 30px; color: #7ba2b8; font-weight: 600; fo
 
 <div class="welcome-overlay" id="welcomeOverlay">
     <div class="welcome-box">
-        <h2>Ruang Tenangmu 🌷</h2>
-        <p>Silakan aktifkan latar musik yang paling nyaman di telingamu saat ini:</p>
+        <h2>Hii! Welcome 🦋</h2>
+        <p>Silakan rileks sejenak dan pilih musik latar yang ingin kamu dengarkan sebelum memulai:</p>
         
         <div class="audio-hub">
-            <button class="music-select active-track" id="track1" onclick="changeTrack('https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3', 'track1')">🎹 Piano</button>
-            <button class="music-select" id="track2" onclick="changeTrack('https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3', 'track2')">🎵 Cozy Lofi</button>
+            <button class="music-select active-track" id="track1" onclick="changeTrack('https://assets.mixkit.co/music/preview/mixkit-beautiful-dream-493.mp3', 'track1')">🎹 Piano Dream</button>
+            <button class="music-select" id="track2" onclick="changeTrack('https://assets.mixkit.co/music/preview/mixkit-sleepy-cat-135.mp3', 'track2')">🎵 Cozy Lofi</button>
         </div>
 
-        <button class="btn-cute" style="margin-top: 20px; width: 100%;" onclick="startWeb()">Masuk Ruang Aman ✨</button>
+        <button class="btn-cute" style="margin-top: 20px; width: 100%;" onclick="startWeb()">Masuk ke Ruang Aman ✨</button>
     </div>
 </div>
 
-<audio id="bgmAudio" loop><source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3" type="audio/mpeg"></audio>
+<audio id="bgmAudio" loop preload="auto">
+    <source src="https://assets.mixkit.co/music/preview/mixkit-beautiful-dream-493.mp3" type="audio/mpeg">
+    Browser kamu tidak mendukung pemutar audio.
+
 
 <div class="music-control-container">
     <button class="music-control-btn" id="musicToggleBtn" onclick="toggleMusic()">⏸</button>
@@ -243,7 +236,7 @@ footer { text-align: center; padding: 30px; color: #7ba2b8; font-weight: 600; fo
 
 <header>
     <h1>LowkeySpace 🌷</h1>
-    <p>Tempat rebahan mental teraman dari bisingnya dunia luar.</p>
+    <p>Sebuah sudut kecil untuk meredakan ketegangan dan menata kembali pikiran.</p>
 </header>
 
 <nav id="navbar">
@@ -257,8 +250,8 @@ footer { text-align: center; padding: 30px; color: #7ba2b8; font-weight: 600; fo
 
     <div id="section-home" class="column-section active-section">
         <div class="card">
-            <h2>💝 Mood Check-In</h2>
-            <p>Bagaimana kabarmu detik ini? Pilih satu lingkaran emosimu:</p>
+            <h2>💝 Evaluasi Emosi</h2>
+            <p>Bagaimana kondisi psikologis Anda saat ini? Pilih indikator berikut:</p>
             <div class="mood-container">
                 <button class="mood-btn" onclick="trackMood('happy')">😊</button>
                 <button class="mood-btn" onclick="trackMood('sad')">🥺</button>
@@ -269,66 +262,65 @@ footer { text-align: center; padding: 30px; color: #7ba2b8; font-weight: 600; fo
         </div>
 
         <div class="card" style="text-align: center;">
-            <h2>🔮 Pesan Penguat Hari Ini</h2>
-            <p>Ketuk kue keberuntunganmu di bawah untuk memunculkan satu kalimat afirmasi rahasia:</p>
-            <button class="btn-cute" style="background:#6cb6ff; box-shadow:0 4px 0 #4a9ae6;" onclick="getAffirmation()">Buka Pesan Hatimu ✨</button>
+            <h2>🔮 Refleksi Internal Hari Ini</h2>
+            <p>Ketuk tombol di bawah untuk memunculkan satu kalimat afirmasi berorientasi realitas:</p>
+            <button class="btn-cute" style="margin-top:10px;" onclick="getAffirmation()">Tampilkan Pesan ✨</button>
             <div id="affirmationBox" class="affirmation-display"></div>
         </div>
-        
+
         <div class="card">
-            <h2>🧸 Selamat Datang di Rumah Virtualmu</h2>
-            <p>Di sini tidak ada batas waktu, tidak ada nilai ujian, dan tidak ada tuntutan produktivitas. Anggap tempat ini selimut hangat di malam yang dingin. Istirahat sejenak ya!</p>
+            <h2>🧸 Ruang Jeda Sementara</h2>
+            <p>Situs ini dirancang tanpa tenggat waktu maupun tuntutan produktivitas. Gunakan ruang ini sepenuhnya untuk mengistirahatkan pikiran dari kejenuhan rutinitas harian Anda.</p>
         </div>
     </div>
 
     <div id="section-pengertian" class="column-section">
-        
         <div class="card">
-            <span class="info-badge badge-blue">Kunci Dasar</span>
+            <span class="info-badge badge-blue">Kunci Utama</span>
             <h2>🧠 Mengenal Kesehatan Mental</h2>
-            <p>Kesehatan mental itu mirip sistem imun tubuh. Bedanya, yang dilindungi adalah emosi dan pikiranmu.</p>
+            <p>Kesehatan mental bekerja layaknya sistem imunitas tubuh, bertugas menjaga stabilitas emosi, ketahanan psikis, dan kejernihan logika berpikir seseorang.</p>
             <div class="highlight-box">
-                <b>Tanda Mental Sehat:</b> Kamu bisa mengenali emosi buruk, bangkit kembali saat gagal, dan tetap fokus belajar tanpa rasa cemas yang mengikat.
+                <b>Tanda Mental Sehat:</b> Kemampuan mengenali dan mengelola emosi negatif secara sadar, serta adaptif dalam menghadapi kegagalan tanpa distorsi kecemasan berlebih.
             </div>
         </div>
 
         <div class="card">
             <span class="info-badge badge-pink">Pahami Bedanya</span>
             <h2>🌧 Apa itu Depresi Klinis?</h2>
-            <p>Depresi klinis bukan sekadar sedih biasa karena patah hati atau gagal ujian. Ini adalah kondisi medis di mana otak kehabisan energi.</p>
+            <p>Depresi klinis bukan sekadar kesedihan situasional akibat kekecewaan sesaat. Ini merupakan kondisi gangguan medis klinis di mana regulasi neurotransmiter di otak mengalami penurunan fungsi.</p>
             <div class="bullet-grid">
                 <div class="bullet-item">
                     <span class="bullet-icon">🕒</span>
-                    <div><b>Durasi Panjang:</b> Berlangsung minimal 2 minggu berturut-turut tanpa jeda rasa bahagia.</div>
+                    <div><b>Durasi Panjang:</b> Berlangsung minimal 2 minggu berturut-turut hampir sepanjang hari tanpa adanya interupsi rasa bahagia.</div>
                 </div>
                 <div class="bullet-item">
                     <span class="bullet-icon">🔋</span>
-                    <div><b>Hampa Energi:</b> Merasa kosong, putus asa, dan kehilangan minat total pada hobi favoritmu.</div>
+                    <div><b>Penurunan Minat Anhedonia:</b> Mengalami mati rasa secara emosional dan kehilangan minat total pada aktivitas yang sebelumnya sangat digemari.</div>
                 </div>
             </div>
         </div>
 
         <div class="card">
             <span class="info-badge badge-purple">Alarm Pikiran</span>
-            <h2>🌩 Mengenal Gangguan Kecemasan (Anxiety)</h2>
-            <p>Gugup saat presentasi itu normal. Tapi kalau rasa takut itu datang tanpa alasan jelas sampai mengganggu harimu, itu tandanya kecemasan klinis.</p>
-            <div class="highlight-box" style="border-left-color: #7744ff;">
-                Otak orang dengan anxiety bekerja layaknya <b>alarm kebakaran yang terlalu sensitif</b>. Asap rokok kecil saja dianggap kebakaran besar di dalam kepalanya.
+            <h2>🌩 Gangguan Kecemasan (Anxiety)</h2>
+            <p>Rasa gugup menjelang evaluasi adalah hal wajar. Namun, apabila kecemasan intens muncul terus-menerus tanpa pemicu yang rasional, kondisi tersebut termasuk indikasi kecemasan klinis.</p>
+            <div class="highlight-box" style="border-left-color: #9370db;">
+                Pada penderita kecemasan, mekanisme pertahanan diri di otak bekerja terlalu sensitif, sehingga menginterpretasikan stimulus kecil sebagai ancaman fatal yang mendesak.
             </div>
         </div>
 
         <div class="card">
             <span class="info-badge badge-mint">Sinyal Lelah</span>
             <h2>🎒 Memahami Academic Burnout</h2>
-            <p>Kamu tidak malas, kamu hanya dipaksa membawa beban akademis yang melebihi kapasitas tangki energimu.</p>
+            <p>Kondisi ini bukan bentuk kemalasan, melainkan kelelahan kronis akibat tuntutan akademis yang melampaui kapasitas energi psikis Anda.</p>
             <div class="bullet-grid">
                 <div class="bullet-item">
                     <span class="bullet-icon">🛑</span>
-                    <div><b>Kehilangan Ambisi:</b> Buku pelajaran yang dulu menarik sekarang terlihat mengerikan.</div>
+                    <div><b>Eksosfer Demotivasi:</b> Materi atau tugas yang awalnya menarik kini memicu penolakan psikologis yang berat dan kecemasan fisik.</div>
                 </div>
                 <div class="bullet-item">
                     <span class="bullet-icon">🤕</span>
-                    <div><b>Sinyal Fisik:</b> Kepala sering pusing kronis dan leher terasa kaku tiap kali melihat tugas sekolah.</div>
+                    <div><b>Somatisasi:</b> Sering diikuti gejala fisik seperti ketegangan otot leher, sakit kepala kronis, atau gangguan pencernaan.</div>
                 </div>
             </div>
         </div>
@@ -336,36 +328,40 @@ footer { text-align: center; padding: 30px; color: #7ba2b8; font-weight: 600; fo
         <div class="card">
             <span class="info-badge badge-blue">Jebakan Otak</span>
             <h2>🌪 Di Balik Badai Overthinking</h2>
-            <p>Overthinking adalah kondisi saat otakmu berputar-putar di tempat yang sama layaknya hamster di dalam roda mainan.</p>
+            <p>Overthinking terjadi ketika proses berpikir logis kehilangan arah dan terjebak dalam siklus kognitif berulang yang tidak menghasilkan solusi nyata.</p>
             <div class="bullet-grid">
                 <div class="bullet-item">
                     <span class="bullet-icon">⏮️</span>
-                    <div><b>Rumination:</b> Menyesali dan memutar ulang kejadian memalukan masa lalu yang sudah lewat.</div>
+                    <div><b>Ruminasi:</b> Fokus berlebihan menganalisis kesalahan masa lalu yang secara objektif sudah tidak dapat diubah lagi.</div>
                 </div>
                 <div class="bullet-item">
                     <span class="bullet-icon">⏭️</span>
-                    <div><b>Worrying:</b> Membuat skenario fiktif yang mengerikan tentang hari esok yang belum tentu terjadi.</div>
+                    <div><b>Kecemasan Antisipatif:</b> Memproyeksikan skenario buruk tentang masa depan yang belum terjadi secara tidak rasional.</div>
                 </div>
             </div>
         </div>
 
         <div class="card">
-            <h2>📊 Jurnal Sinyal Darurat Tubuh</h2>
-            <p>Klik tombol drop-down di bawah ini untuk melihat rambu-rambu bahaya dari dalam dirimu:</p>
+            <h2>📊 Mengenali Tanda Tubuh dan Pikiran</h2>
+            <p>Buka menu di bawah ini untuk melihat rambu-rambu atau tanda saat kondisi mental kita sedang menurun:</p>
 
-            <div class="accordion" onclick="toggle(this)">🔍 Deteksi Ciri Depresi Klinis <span>▼</span></div>
+            <div class="accordion" onclick="toggle(this)">🔍 Tanda Sedang Mengalami Depresi <span>▼</span></div>
             <div class="panel">
-                <p>• Kehilangan minat hobi total (*Anhedonia*).<br>• Pola tidur hancur (sulit tidur atau justru tidur terus seharian).<br>• Merasa diri beban tidak berguna bagi sekitar.</p>
+                <p style="margin-bottom: 5px;">• Kehilangan minat atau tidak lagi merasa senang saat melakukan hobi.</p>
+                <p style="margin-bottom: 5px;">• Jam tidur berantakan (susah tidur malam atau justru tidur seharian).</p>
+                <p>• Sering menyalahkan diri sendiri secara berlebihan dan merasa tidak berdaya.</p>
             </div>
 
-            <div class="accordion" onclick="toggle(this)">🔍 Deteksi Serangan Kecemasan <span>▼</span></div>
+            <div class="accordion" onclick="toggle(this)">🔍 Tanda Cemas yang Berlebihan <span>▼</span></div>
             <div class="panel">
-                <p>• Jantung berdetak kencang mendadak seperti habis lari maraton.<br>• Muncul keringat dingin dan dada terasa sesak terhimpit udara.</p>
+                <p style="margin-bottom: 5px;">• Jantung tiba-tiba berdebar sangat kencang padahal sedang tidak beraktivitas berat.</p>
+                <p>• Napas terasa pendek atau sesak, sering disertai keluar keringat dingin dan badan gemetar.</p>
             </div>
 
-            <div class="accordion" onclick="toggle(this)">🔍 Deteksi Gejala Burnout Akademis <span>▼</span></div>
+            <div class="accordion" onclick="toggle(this)">🔍 Tanda Mengalami Lelah Belajar (Burnout) <span>▼</span></div>
             <div class="panel">
-                <p>• Energi sosial habis, bawaannya emosional dan sensitif saat diajak diskusi.<br>• Motivasi belajar anjlok sampai ke level nol dalam waktu bulanan.</p>
+                <p style="margin-bottom: 5px;">• Merasa malas atau tidak peduli lagi untuk berinteraksi dengan lingkungan sekitar.</p>
+                <p>• Motivasi dan performa belajar menurun drastis karena tubuh dan pikiran sudah terlalu lelah.</p>
             </div>
         </div>
     </div>
@@ -373,42 +369,42 @@ footer { text-align: center; padding: 30px; color: #7ba2b8; font-weight: 600; fo
     <div id="section-tips" class="column-section">
         <div class="card" style="text-align: center;">
             <h2>🟢 Pemandu Napas Visual</h2>
-            <p>Ikuti irama bulatan hijau di bawah: Tarik napas panjang saat bulatan membesar, embuskan perlahan saat mengecil.</p>
+            <p style="margin-bottom:15px;">Lakukan regulasi pernapasan: Tarik napas saat lingkaran membesar, embuskan perlahan saat lingkaran mengecil.</p>
             <div class="breathe-wrapper">
                 <div class="breathe-circle" id="bubbleElement">Tarik...</div>
-                <div class="breathe-text" id="breatheLabel">Fokus pada nafasmu</div>
+                <div class="breathe-text" id="breatheLabel">Fokus pada ritme napasmu</div>
             </div>
         </div>
 
         <div class="card">
-            <h2>🌸 Toolkit Relaksasi Mandiri</h2>
-            <div class="accordion" onclick="toggle(this)">✨ Redakan Panic Attack via Box Breathing <span>▼</span></div>
+            <h2>🌸 Regulasi Mandiri</h2>
+            <div class="accordion" onclick="toggle(this)">✨ Box Breathing untuk Meredakan Kecemasan Akut <span>▼</span></div>
             <div class="panel">
-                <p>Ikuti pola pernapasan kotak seimbang ini 4 kali berturut-turut:<br><b>1.</b> Tarik napas lewat hidung (4 detik)<br><b>2.</b> Tahan di dada (4 detik)<br><b>3.</b> Buang lewat mulut (4 detik)<br><b>4.</b> Tahan kosong (4 detik)</p>
+                <p>Terapkan siklus pernapasan berirama konstan ini sebanyak 4 kali:<br><b>1.</b> Tarik napas melalui hidung secara perlahan (4 detik)<br><b>2.</b> Tahan sirkulasi udara di paru-paru (4 detik)<br><b>3.</b> Embuskan udara lewat mulut secara bertahap (4 detik)<br><b>4.</b> Pertahankan kondisi paru-paru kosong (4 detik)</p>
             </div>
-            <div class="accordion" onclick="toggle(this)">✨ Putus Overthinking via Trik Digital Detox <span>▼</span></div>
+            <div class="accordion" onclick="toggle(this)">✨ Pengurangan Stimulus (Digital Detox) <span>▼</span></div>
             <div class="panel">
-                <p>Matikan seluruh notifikasi media sosial minimal 30 menit sebelum tidur malam. Jauhkan layar HP dari jangkauan kasur agar gelombang cemas mereda.</p>
+                <p>Batasi konsumsi informasi dan matikan notifikasi perangkat elektronik 30 menit sebelum tidur untuk menurunkan aktivitas gelombang otak bawah sadar yang memicu kecemasan.</p>
             </div>
         </div>
 
         <div class="card">
-            <h2>🌿 Teknik Grounding Anchor 5-4-3-2-1</h2>
-            <p>Gunakan panca inderamu agar pikiranmu kembali berpijak pada dunia nyata sekarang:</p>
-            <p style="font-size: 14.5px; padding-left: 15px; border-left: 4px solid #60ccaa; line-height: 2; font-weight: 600;">
-                👁️ Sebutkan <b>5</b> benda di sekitarmu yang matamu lihat.<br>
-                🖐️ Rasakan <b>4</b> sentuhan fisik pada kulitmu saat ini.<br>
-                👂 Tangkap <b>3</b> sumber suara yang terdengar di ruangan.<br>
-                👃 Hirup dan sadari <b>2</b> bebauan udara di dekatmu.<br>
-                👅 Sadari <b>1</b> sisa rasa pada indera pengecap lidah.
+            <h2>🌿 Teknik Grounding 5-4-3-2-1</h2>
+            <p style="margin-bottom:10px;">Alihkan fokus pikiran dari distorsi kecemasan menuju realitas objektif sekitar melalui panca indera:</p>
+            <p style="font-size: 14.5px; padding-left: 15px; border-left: 4.5px solid #b0e0e6; line-height: 2; font-weight: 700;">
+                👁️ Identifikasi <b>5</b> objek fisik yang terlihat di ruangan Anda.<br>
+                🖐️ Sadari <b>4</b> sensasi sentuhan fisik pada kulit saat ini.<br>
+                👂 Fokuskan pendengaran pada <b>3</b> sumber suara di sekitar.<br>
+                👃 Amati <b>2</b> aroma udara yang terhirup di dekat Anda.<br>
+                👅 Kenali <b>1</b> impresi rasa yang tersisa pada indera pengecap.
             </p>
         </div>
     </div>
 
     <div id="section-tracker" class="column-section">
         <div class="card">
-            <h2>💧 Hidrasi Tubuh Hari Ini</h2>
-            <p>Kurang minum air putih memicu penurunan fungsi kognitif otak dan menaikkan level stres. Ketuk gelas setiap kamu selesai minum:</p>
+            <h2>💧 Pemantauan Hidrasi</h2>
+            <p>Dehidrasi ringan dapat memengaruhi fungsi kognitif dan konsentrasi. Tandai indikator di bawah setiap Anda menyelesaikan satu gelas air:</p>
             <div class="water-grid">
                 <button class="glass-btn" onclick="toggleGlass(this)">🥛</button>
                 <button class="glass-btn" onclick="toggleGlass(this)">🥛</button>
@@ -416,18 +412,16 @@ footer { text-align: center; padding: 30px; color: #7ba2b8; font-weight: 600; fo
                 <button class="glass-btn" onclick="toggleGlass(this)">🥛</button>
                 <button class="glass-btn" onclick="toggleGlass(this)">🥛</button>
                 <button class="glass-btn" onclick="toggleGlass(this)">🥛</button>
-                <button class="glass-btn" onclick="toggleGlass(this)">🥛</button>
-                <button class="glass-btn" onclick="toggleGlass(this)">🥛</button>
             </div>
         </div>
 
-        <div class="card" id="todo">
-            <h2>🌷 Jurnal Misi Kebaikan Kecil</h2>
-            <p>Coret daftar di bawah ini setelah kamu berhasil memberikan kebaikan kecil pada dirimu sendiri:</p>
+        <div class="card">
+            <h2>🌷 Pemeliharaan Diri Mandiri</h2>
+            <p>Catat dan selesaikan target pemenuhan kebutuhan dasar personal Anda hari ini:</p>
             <div class="todo-container">
                 <div class="todo-box">
-                    <input id="taskInput" placeholder="Misal: Mencuci muka, minum vitamin, tidur tepat waktu...">
-                    <button class="btn-cute" style="background:#6cb6ff; box-shadow:0 4px 0 #4a9ae6;" onclick="addTask()">Simpan Misi</button>
+                    <input id="taskInput" placeholder="Contoh: Istirahat tepat waktu, mengonsumsi nutrisi seimbang...">
+                    <button class="btn-cute" onclick="addTask()">Simpan</button>
                 </div>
                 <ul id="listContainer" class="todo-list"></ul>
             </div>
@@ -436,57 +430,70 @@ footer { text-align: center; padding: 30px; color: #7ba2b8; font-weight: 600; fo
 </div>
 
 <footer>
-    © 2026 LowkeySpace 🌷 | Langkah kecilmu hari ini sangat berharga. Jaga dirimu ya!
+    © 2026 LowkeySpace 🌷 | Setiap upaya kecil Anda dalam menjaga kesehatan mental adalah hal yang berharga.
 </footer>
 
 <script>
 let bgm = document.getElementById("bgmAudio");
 let toggleBtn = document.getElementById("musicToggleBtn");
+let currentTrackUrl = 'https://assets.mixkit.co/music/preview/mixkit-beautiful-dream-493.mp3';
 
-// DYNAMIC NAVIGATION
 function switchTab(tabName, themeClassName) {
     document.querySelectorAll('.column-section').forEach(section => section.classList.remove('active-section'));
     document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
     
     document.getElementById('section-' + tabName).classList.add('active-section');
-    event.currentTarget.classList.add('active');
+    if(event && event.currentTarget) event.currentTarget.classList.add('active');
     
     document.body.className = '';
     document.body.classList.add(themeClassName);
-    
-    window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 function changeTrack(sourceUrl, buttonId) {
     document.querySelectorAll('.music-select').forEach(btn => btn.classList.remove('active-track'));
     document.getElementById(buttonId).classList.add('active-track');
+    currentTrackUrl = sourceUrl;
     bgm.src = sourceUrl;
-    bgm.volume = 0.2;
+    bgm.load();
     if(document.getElementById("welcomeOverlay").style.display === "none") {
-        bgm.play().catch(e => console.log("Stream restart bypass active."));
-        toggleBtn.innerText = "⏸";
+        bgm.play().then(() => { toggleBtn.innerText = "⏸"; }).catch(e => console.log("Play blocked:", e));
     }
 }
 
 function startWeb() {
-    document.getElementById("welcomeOverlay").style.opacity = "0";
-    setTimeout(() => { document.getElementById("welcomeOverlay").style.display = "none"; }, 500);
-    bgm.volume = 0.2;
-    bgm.play().then(() => { toggleBtn.innerText = "⏸"; }).catch(e => console.log("User unlocked audio."));
+    let overlay = document.getElementById("welcomeOverlay");
+    overlay.style.opacity = "0";
+    setTimeout(() => { overlay.style.display = "none"; }, 400);
+    
+    bgm.src = currentTrackUrl;
+    bgm.load();
+    bgm.volume = 0.4;
+    
+    let playPromise = bgm.play();
+    if (playPromise !== undefined) {
+        playPromise.then(() => {
+            toggleBtn.innerText = "⏸";
+        }).catch(error => {
+            console.log("Playback failed:", error);
+            toggleBtn.innerText = "▶";
+        });
+    }
 }
 
 function toggleMusic() {
-    if (bgm.paused) { bgm.play(); toggleBtn.innerText = "⏸"; } 
-    else { bgm.pause(); toggleBtn.innerText = "▶"; }
+    if (bgm.paused) { 
+        bgm.play(); 
+        toggleBtn.innerText = "⏸"; 
+    } else { 
+        bgm.pause(); 
+        toggleBtn.innerText = "▶"; 
+    }
 }
 
-// COOKIE DATA
 const affirmations = [
-    "Kamu diperbolehkan beristirahat tanpa harus merasa bersalah. Dunia luar bisa menunggu. 🤍",
-    "Menjadi tidak sempurna bukan berarti kamu gagal. Kamu berharga apa adanya hari ini. ✨",
-    "Badai pikiranmu saat ini pasti mereda, layaknya fase berat kemarin yang berhasil kamu lalui. 🌱",
-    "Satu kegagalan tugas sekolah tidak mendefinisikan seluruh garis masa depanmu. Santai dulu ya. 🧸",
-    "Fisik dan jiwamu sudah berjuang keras hari ini. Berterima kasihlah ke dirimu malam ini. 💖"
+    "Anda berhak mengambil jeda sejenak tanpa harus diiringi rasa bersalah atas produktivitas. Kewajiban luar dapat menunggu. 🤍",
+    "Keterbatasan dan kegagalan situasional tidak mengurangi nilai esensial diri Anda sebagai manusia. ✨",
+    "Gejolak emosi dan kecemasan saat ini adalah kondisi transisi yang dapat diredakan, layaknya tantangan sebelumnya yang berhasil Anda lewati. 🌱"
 ];
 function getAffirmation() {
     let box = document.getElementById("affirmationBox");
@@ -494,22 +501,20 @@ function getAffirmation() {
     box.innerHTML = affirmations[Math.floor(Math.random() * affirmations.length)];
 }
 
-// BREATHE TIMERS
 setInterval(() => {
     let bubble = document.getElementById("bubbleElement");
     let label = document.getElementById("breatheLabel");
     if(bubble) {
         if (bubble.innerText === "Tarik...") {
             bubble.innerText = "Hembuskan";
-            label.innerText = "Lepaskan seluruh beban ketegangan ototmu";
+            if(label) label.innerText = "Lepaskan ketegangan secara perlahan";
         } else {
             bubble.innerText = "Tarik...";
-            label.innerText = "Isi paru-parumu dengan udara ketenangan";
+            if(label) label.innerText = "Fokuskan pikiran pada keteraturan regulasi udara";
         }
     }
-}, 4000);
+}, 3500);
 
-// PETALS ANIMATION
 const petalIcons = ['🌸', '🌷', '✨', '🤍'];
 function createPetal() {
     const petal = document.createElement('div');
@@ -520,23 +525,25 @@ function createPetal() {
     document.body.appendChild(petal);
     setTimeout(() => { petal.remove(); }, 8000);
 }
-setInterval(createPetal, 500);
+setInterval(createPetal, 600);
 
 function trackMood(type) {
     let box = document.getElementById("moodFeedback");
     box.style.display = "block";
-    if(type === 'happy') box.innerHTML = "Yeay! Senang mendengarnya, jaga terus energi positifmu sepanjang hari ya! ✨";
-    if(type === 'sad') box.innerHTML = "Gak apa-apa kok sedih. Kamu hebat banget sudah kuat melangkah sampai detik ini. Peluk jauh! 🧸";
-    if(type === 'angry') box.innerHTML = "Keluarkan pelan-pelan rasa kesalmu di ruang aman ini, yuk rilekskan tanganmu kembali. 🍃";
-    if(type === 'tired') box.innerHTML = "Rebahkan badanmu, luruskan kaki. Kamu sudah bekerja sangat keras hari ini, saatnya merem. 😴";
+    box.innerHTML = "Validasi perasaan Anda secara objektif. Anda berhak mengekspresikannya dengan aman di sini. 🧸";
 }
 
 function toggleGlass(btn) { btn.classList.toggle('active'); }
 
 function toggle(el){
     let panel = el.nextElementSibling;
-    if (panel.style.display === "block") { panel.style.display = "none"; el.querySelector('span').innerText = "▼"; } 
-    else { panel.style.display = "block"; el.querySelector('span').innerText = "▲"; }
+    if (panel.style.display === "block") { 
+        panel.style.display = "none"; 
+        el.querySelector('span').innerText = "▼"; 
+    } else { 
+        panel.style.display = "block"; 
+        el.querySelector('span').innerText = "▲"; 
+    }
 }
 
 function addTask(){
@@ -544,7 +551,7 @@ function addTask(){
     let list = document.getElementById("listContainer");
     if(input.value.trim() === "") return;
     let li = document.createElement("li");
-    li.innerHTML = input.value + " <button style='background:none; border:none; color:#ff7da3; cursor:pointer; font-weight:bold; font-size:14px;' onclick='this.parentElement.remove()'>❌</button>";
+    li.innerHTML = input.value + " <button style='background:none; border:none; color:#db7093; cursor:pointer; font-weight:bold; font-size:14px;' onclick='this.parentElement.remove()'>❌</button>";
     list.appendChild(li);
     input.value = "";
 }
