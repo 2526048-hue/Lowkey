@@ -227,8 +227,7 @@ footer { text-align: center; padding: 40px 20px; color: #5a6578; font-weight: 70
 
 <audio id="bgmAudio" loop preload="auto">
     <source src="https://assets.mixkit.co/music/preview/mixkit-beautiful-dream-493.mp3" type="audio/mpeg">
-    Browser kamu tidak mendukung pemutar audio.
-
+</audio>
 
 <div class="music-control-container">
     <button class="music-control-btn" id="musicToggleBtn" onclick="toggleMusic()">⏸</button>
@@ -456,14 +455,13 @@ function changeTrack(sourceUrl, buttonId) {
     bgm.src = sourceUrl;
     bgm.load();
     if(document.getElementById("welcomeOverlay").style.display === "none") {
-        bgm.play().then(() => { toggleBtn.innerText = "⏸"; }).catch(e => console.log("Play blocked:", e));
+        bgm.play().then(() => { toggleBtn.innerText = "⏸"; }).catch(e => console.log("Play blocked"));
     }
 }
 
 function startWeb() {
-    let overlay = document.getElementById("welcomeOverlay");
-    overlay.style.opacity = "0";
-    setTimeout(() => { overlay.style.display = "none"; }, 400);
+    document.getElementById("welcomeOverlay").style.opacity = "0";
+    setTimeout(() => { document.getElementById("welcomeOverlay").style.display = "none"; }, 400);
     
     bgm.src = currentTrackUrl;
     bgm.load();
@@ -474,20 +472,15 @@ function startWeb() {
         playPromise.then(() => {
             toggleBtn.innerText = "⏸";
         }).catch(error => {
-            console.log("Playback failed:", error);
+            console.log("Playback failed, manual trigger needed:", error);
             toggleBtn.innerText = "▶";
         });
     }
 }
 
 function toggleMusic() {
-    if (bgm.paused) { 
-        bgm.play(); 
-        toggleBtn.innerText = "⏸"; 
-    } else { 
-        bgm.pause(); 
-        toggleBtn.innerText = "▶"; 
-    }
+    if (bgm.paused) { bgm.play(); toggleBtn.innerText = "⏸"; } 
+    else { bgm.pause(); toggleBtn.innerText = "▶"; }
 }
 
 const affirmations = [
@@ -537,13 +530,8 @@ function toggleGlass(btn) { btn.classList.toggle('active'); }
 
 function toggle(el){
     let panel = el.nextElementSibling;
-    if (panel.style.display === "block") { 
-        panel.style.display = "none"; 
-        el.querySelector('span').innerText = "▼"; 
-    } else { 
-        panel.style.display = "block"; 
-        el.querySelector('span').innerText = "▲"; 
-    }
+    if (panel.style.display === "block") { panel.style.display = "none"; el.querySelector('span').innerText = "▼"; } 
+    else { panel.style.display = "block"; el.querySelector('span').innerText = "▲"; }
 }
 
 function addTask(){
