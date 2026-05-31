@@ -149,8 +149,8 @@ p, li { font-size: 14.5px; color: #4a5568; line-height: 1.7; font-weight: 600; }
 }
 .mood-btn:hover { transform: translateY(-3px); border-color: #db7093; background: #fff5f7; }
 #moodFeedback { 
-    background: #ffffff; padding: 14px; border-radius: 12px; border: 2px dashed #db7093;
-    text-align: center; font-weight: 700; display: none; color: #db7093; margin-top: 10px;
+    background: #ffffff; padding: 18px; border-radius: 12px; border: 2px dashed #db7093;
+    text-align: left; line-height: 1.6; display: none; color: #2d3748; margin-top: 10px;
 }
 
 .water-grid { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 15px; justify-content: center; }
@@ -217,8 +217,8 @@ footer { text-align: center; padding: 40px 20px; color: #5a6578; font-weight: 70
         <p>Silakan rileks sejenak dan pilih musik latar yang ingin kamu dengarkan sebelum memulai:</p>
         
         <div class="audio-hub">
-            <button class="music-select active-track" id="track1" onclick="changeTrack('https://assets.mixkit.co/music/preview/mixkit-beautiful-dream-493.mp3', 'track1')">🎹 Piano Dream</button>
-            <button class="music-select" id="track2" onclick="changeTrack('https://assets.mixkit.co/music/preview/mixkit-sleepy-cat-135.mp3', 'track2')">🎵 Cozy Lofi</button>
+            <button class="music-select active-track" id="track1" onclick="changeTrack('https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3', 'track1')">🌌 Deep Relaxation Pad</button>
+            <button class="music-select" id="track2" onclick="changeTrack('https://www.soundhelix.com/examples/mp3/SoundHelix-Song-16.mp3', 'track2')">🌿 Peaceful Meditation</button>
         </div>
 
         <button class="btn-cute" style="margin-top: 20px; width: 100%;" onclick="startWeb()">Masuk ke Ruang Aman ✨</button>
@@ -226,7 +226,7 @@ footer { text-align: center; padding: 40px 20px; color: #5a6578; font-weight: 70
 </div>
 
 <audio id="bgmAudio" loop preload="auto">
-    <source src="https://assets.mixkit.co/music/preview/mixkit-beautiful-dream-493.mp3" type="audio/mpeg">
+    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3" type="audio/mpeg">
 </audio>
 
 <div class="music-control-container">
@@ -341,7 +341,7 @@ footer { text-align: center; padding: 40px 20px; color: #5a6578; font-weight: 70
         </div>
 
         <div class="card">
-            <h2>📊 Mengenali Tanda Tubuh dan Pikiran</h2>
+            <h2>🔍 Mengenali Tanda Tubuh dan Pikiran</h2>
             <p>Buka menu di bawah ini untuk melihat rambu-rambu atau tanda saat kondisi mental kita sedang menurun:</p>
 
             <div class="accordion" onclick="toggle(this)">🔍 Tanda Sedang Mengalami Depresi <span>▼</span></div>
@@ -367,7 +367,7 @@ footer { text-align: center; padding: 40px 20px; color: #5a6578; font-weight: 70
 
     <div id="section-tips" class="column-section">
         <div class="card" style="text-align: center;">
-            <h2>🟢 Pemandu Napas Visual</h2>
+            <h2>🌸 Pemandu Napas Visual</h2>
             <p style="margin-bottom:15px;">Lakukan regulasi pernapasan: Tarik napas saat lingkaran membesar, embuskan perlahan saat lingkaran mengecil.</p>
             <div class="breathe-wrapper">
                 <div class="breathe-circle" id="bubbleElement">Tarik...</div>
@@ -376,7 +376,7 @@ footer { text-align: center; padding: 40px 20px; color: #5a6578; font-weight: 70
         </div>
 
         <div class="card">
-            <h2>🌸 Regulasi Mandiri</h2>
+            <h2>🌿 Regulasi Mandiri</h2>
             <div class="accordion" onclick="toggle(this)">✨ Box Breathing untuk Meredakan Kecemasan Akut <span>▼</span></div>
             <div class="panel">
                 <p>Terapkan siklus pernapasan berirama konstan ini sebanyak 4 kali:<br><b>1.</b> Tarik napas melalui hidung secara perlahan (4 detik)<br><b>2.</b> Tahan sirkulasi udara di paru-paru (4 detik)<br><b>3.</b> Embuskan udara lewat mulut secara bertahap (4 detik)<br><b>4.</b> Pertahankan kondisi paru-paru kosong (4 detik)</p>
@@ -388,7 +388,7 @@ footer { text-align: center; padding: 40px 20px; color: #5a6578; font-weight: 70
         </div>
 
         <div class="card">
-            <h2>🌿 Teknik Grounding 5-4-3-2-1</h2>
+            <h2>🌱 Teknik Grounding 5-4-3-2-1</h2>
             <p style="margin-bottom:10px;">Alihkan fokus pikiran dari distorsi kecemasan menuju realitas objektif sekitar melalui panca indera:</p>
             <p style="font-size: 14.5px; padding-left: 15px; border-left: 4.5px solid #b0e0e6; line-height: 2; font-weight: 700;">
                 👁️ Identifikasi <b>5</b> objek fisik yang terlihat di ruangan Anda.<br>
@@ -423,6 +423,10 @@ footer { text-align: center; padding: 40px 20px; color: #5a6578; font-weight: 70
                     <button class="btn-cute" onclick="addTask()">Simpan</button>
                 </div>
                 <ul id="listContainer" class="todo-list"></ul>
+                
+                <p style="font-size: 11px; color: #a0aec0; margin-top: 12px; font-weight: 500; font-style: italic; text-align: center; line-height: 1.4;">
+                    *Situs ini menjaga privasi penuh Anda. List di atas hanya tersimpan sementara selama halaman ini terbuka dan akan terhapus otomatis saat web ditutup atau dimuat ulang.
+                </p>
             </div>
         </div>
     </div>
@@ -435,7 +439,8 @@ footer { text-align: center; padding: 40px 20px; color: #5a6578; font-weight: 70
 <script>
 let bgm = document.getElementById("bgmAudio");
 let toggleBtn = document.getElementById("musicToggleBtn");
-let currentTrackUrl = 'https://assets.mixkit.co/music/preview/mixkit-beautiful-dream-493.mp3';
+// Diperbarui ke lagu SoundHelix nomor 8 yang berupa sinyal ambient gelombang tenang (Healing pad)
+let currentTrackUrl = 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3';
 
 function switchTab(tabName, themeClassName) {
     document.querySelectorAll('.column-section').forEach(section => section.classList.remove('active-section'));
@@ -465,7 +470,7 @@ function startWeb() {
     
     bgm.src = currentTrackUrl;
     bgm.load();
-    bgm.volume = 0.4;
+    bgm.volume = 0.3; // Diturunkan sedikit volume standarnya agar lebih sayup-sayup lembut
     
     let playPromise = bgm.play();
     if (playPromise !== undefined) {
@@ -523,7 +528,26 @@ setInterval(createPetal, 600);
 function trackMood(type) {
     let box = document.getElementById("moodFeedback");
     box.style.display = "block";
-    box.innerHTML = "Validasi perasaan Anda secara objektif. Anda berhak mengekspresikannya dengan aman di sini. 🧸";
+    
+    let quote = "";
+    switch(type) {
+        case 'happy':
+            quote = "✨ <b>Senang melihatmu tersenyum hari ini!</b> Jagalah percikan energi positif ini, tetapi ingatlah bahwa kamu tidak harus selalu terlihat 'luar biasa' setiap saat. Nikmati momen berharga ini sepenuhnya ya. 🌸";
+            break;
+        case 'sad':
+            quote = "🥺 <b>Ruang ini aman untuk air matamu.</b> Menjadi tidak baik-baik saja adalah respons yang sangat manusiawi terhadap dunia yang melelahkan. Kamu tidak lemah karena merasa sedih; kamu hanya sedang memproses hal-hal berat. Ambil waktumu. 🤍";
+            break;
+        case 'angry':
+            quote = "😡 <b>Marah adalah validasi bahwa batasanmu telah terusik.</b> Tarik napas dalam-dalam... amarahmu valid, tetapi jangan biarkan ia membakar kedamaian tokomu sendiri. Salurkan pelan-pelan di ruang aman ini, kamu memegang kendali penuh. 🌿";
+            break;
+        case 'tired':
+            quote = "😴 <b>Tubuh dan pikiranmu sedang mengirim sinyal darurat.</b> Lelahmu bukan tanda kegagalan atau kemalasan, melainkan bukti kalau kamu sudah berjuang teramat keras. Letakkan dulu bebanmu, mari rehat sejenak di sini. 🧸";
+            break;
+        default:
+            quote = "Validasi perasaan Anda secara objektif. Anda berhak mengekspresikannya dengan aman di sini. 🧸";
+    }
+    
+    box.innerHTML = quote + "<br><span style='display:block; margin-top:10px; font-size:11px; color:#a0aec0; font-weight:500; font-style:italic;'>*Catatan: Pilihan emosi Anda hanya dibaca sementara oleh sistem untuk memunculkan pesan ini dan tidak disimpan di server/riwayat mana pun demi privasi total.</span>";
 }
 
 function toggleGlass(btn) { btn.classList.toggle('active'); }
